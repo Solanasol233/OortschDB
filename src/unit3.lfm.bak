@@ -1,0 +1,27 @@
+object Form3: TForm3
+  Left = 1216
+  Height = 65
+  Top = 621
+  Width = 320
+  Caption = 'Delete Database'
+  ClientHeight = 65
+  ClientWidth = 320
+  LCLVersion = '1.6.0.4'
+  object Edit1: TEdit
+    Left = 8
+    Height = 23
+    Top = 6
+    Width = 304
+    TabOrder = 0
+    Text = 'Name (10 chars long)'
+  end
+  object Button1: TButton
+    Left = 8
+    Height = 25
+    Top = 32
+    Width = 304
+    Caption = 'Delete Database'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+end

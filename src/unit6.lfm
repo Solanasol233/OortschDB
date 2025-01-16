@@ -1,0 +1,178 @@
+object Form6: TForm6
+  Left = 1123
+  Height = 285
+  Top = 327
+  Width = 412
+  Caption = 'Add Content'
+  ClientHeight = 285
+  ClientWidth = 412
+  OnCreate = FormCreate
+  LCLVersion = '1.6.0.4'
+  object Label4: TLabel
+    Left = 8
+    Height = 15
+    Top = 8
+    Width = 94
+    Caption = 'Choose Database:'
+    ParentColor = False
+  end
+  object Edit1: TEdit
+    Left = 8
+    Height = 23
+    Top = 29
+    Width = 185
+    TabOrder = 0
+    Text = 'Name of DB (10c)'
+  end
+  object Button1: TButton
+    Left = 8
+    Height = 25
+    Top = 64
+    Width = 185
+    Caption = 'Choose DB'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object GroupBox1: TGroupBox
+    Left = 8
+    Height = 113
+    Top = 104
+    Width = 185
+    Caption = 'Choose Cell'
+    ClientHeight = 93
+    ClientWidth = 181
+    TabOrder = 2
+    object Label1: TLabel
+      Left = 8
+      Height = 15
+      Top = 0
+      Width = 26
+      Caption = 'Row:'
+      ParentColor = False
+    end
+    object Row: TSpinEdit
+      Left = 8
+      Height = 23
+      Top = 24
+      Width = 72
+      TabOrder = 0
+    end
+    object Column: TSpinEdit
+      Left = 104
+      Height = 23
+      Top = 24
+      Width = 72
+      TabOrder = 1
+    end
+    object Label2: TLabel
+      Left = 104
+      Height = 15
+      Top = 0
+      Width = 46
+      Caption = 'Column:'
+      ParentColor = False
+    end
+    object Button2: TButton
+      Left = 8
+      Height = 25
+      Top = 56
+      Width = 168
+      Caption = 'Choose Cell'
+      OnClick = Button2Click
+      TabOrder = 2
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 208
+    Height = 113
+    Top = 104
+    Width = 193
+    Caption = 'Add Content'
+    ClientHeight = 93
+    ClientWidth = 189
+    TabOrder = 3
+    object Label3: TLabel
+      Left = 8
+      Height = 15
+      Top = 0
+      Width = 75
+      Caption = 'Content-Type:'
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 88
+      Height = 15
+      Top = 0
+      Width = 34
+      Caption = 'Label5'
+      ParentColor = False
+    end
+    object Edit2: TEdit
+      Left = 8
+      Height = 23
+      Top = 24
+      Width = 114
+      TabOrder = 0
+      Text = 'Edit2'
+    end
+    object Button3: TButton
+      Left = 8
+      Height = 25
+      Top = 56
+      Width = 114
+      Caption = 'Insert Content'
+      OnClick = Button3Click
+      TabOrder = 1
+    end
+    object SpinEdit1: TSpinEdit
+      Left = 8
+      Height = 23
+      Top = 24
+      Width = 114
+      TabOrder = 2
+    end
+    object ToggleBox1: TToggleBox
+      Left = 8
+      Height = 25
+      Top = 24
+      Width = 114
+      Caption = 'False'
+      OnChange = ToggleBox1Change
+      TabOrder = 3
+    end
+  end
+  object Label6: TLabel
+    Left = 216
+    Height = 15
+    Top = 8
+    Width = 73
+    Caption = 'Choose Table:'
+    ParentColor = False
+  end
+  object Edit3: TEdit
+    Left = 216
+    Height = 23
+    Top = 29
+    Width = 185
+    TabOrder = 4
+    Text = 'Name of Table (10c)'
+  end
+  object Button4: TButton
+    Left = 216
+    Height = 25
+    Top = 64
+    Width = 185
+    Caption = 'Choose Table'
+    OnClick = Button4Click
+    TabOrder = 5
+  end
+  object Button5: TButton
+    Left = 8
+    Height = 25
+    Top = 224
+    Width = 393
+    Caption = 'Ready'
+    OnClick = Button5Click
+    TabOrder = 6
+  end
+end

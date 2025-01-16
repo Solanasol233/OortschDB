@@ -1,0 +1,36 @@
+object Form2: TForm2
+  Left = 1215
+  Height = 98
+  Top = 491
+  Width = 320
+  Caption = 'Create Database'
+  ClientHeight = 98
+  ClientWidth = 320
+  OnCreate = FormCreate
+  LCLVersion = '1.6.0.4'
+  object Button1: TButton
+    Left = 8
+    Height = 25
+    Top = 62
+    Width = 299
+    Caption = 'Create Database'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Edit1: TEdit
+    Left = 8
+    Height = 23
+    Top = 32
+    Width = 299
+    TabOrder = 1
+    Text = 'Name (10 chars)'
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 15
+    Top = 8
+    Width = 100
+    Caption = 'Name of Database:'
+    ParentColor = False
+  end
+end

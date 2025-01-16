@@ -1,0 +1,80 @@
+unit Unit7;
+
+{$mode ObjFPC}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, database;
+
+type
+
+  { TForm7 }
+
+  TForm7 = class(TForm)
+    Button1: TButton;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    procedure Button1Click(Sender: TObject);
+  private
+
+  public
+
+  end;
+
+var
+  Form7: TForm7;
+
+implementation
+
+{$R *.lfm}
+
+{ TForm7 }
+
+
+//Delete Table
+procedure TForm7.Button1Click(Sender: TObject);
+   var db_name: array[0..9] of char;
+       table_name: array[0..9] of char;
+       i: integer;
+   begin
+         //Wenn der Name der Datanbank nicht genau 10 Zeichen lang ist,
+         //wird die Prozedur verlassen
+         if Length(Edit1.text) <> 10 then begin
+           Edit1.Text := 'Name not right length';
+           exit;
+         end;
+         //Wenn der Name der Tabelle nicht genau 10 Zeichen lang ist,
+         //wird die Prozedur verlassen
+         if Length(Edit2.text) <> 10 then begin
+            Edit2.text := 'Name not rigth length';
+            exit;
+         end;
+         //Eingelesener Name der Tabelle und der der Datenbank
+         //aus Edit2 und Edit1 wird in table_name-Array und db_name-Array kopiert
+         for i:=0 to 9 do begin
+             db_name[i] := Edit1.text[i+1];
+             table_name[i] := Edit2.text[i+1];
+         end;
+         //Wenn der DB-Pointer "ins nichts" zeigt (vergleichbar mit null in C),
+         //wird die Prozedur verlassen
+         if getDB(db_name) = nil then begin
+           Edit1.text:= 'Database with this name does not exist';
+           exit;
+         end;
+         //Wenn der Table-Pointer "ins nichts" zeigt (vergleichbar mit null in C),
+         //wird die Prozedur verlassen
+         if getTable(getDB(db_name), table_name) = nil then begin
+           Edit2.text:= 'Table with this name does not exist';
+           exit;
+         end;
+   //Wenn Prozedur bis jetzt nicht verlassen wurde, wird die gewählte
+   //Datenbank gelöscht und die Form7 verlassen
+   deleteTable(getDB(db_name), getTable(getDB(db_name), table_name));
+   form7.hide();
+end;
+
+end.
+

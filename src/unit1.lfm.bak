@@ -1,0 +1,127 @@
+object Form1: TForm1
+  Left = 928
+  Height = 499
+  Top = 172
+  Width = 982
+  Caption = 'OortschDB'
+  ClientHeight = 479
+  ClientWidth = 982
+  Menu = MainMenu1
+  LCLVersion = '1.6.0.4'
+  object StringGrid1: TStringGrid
+    Left = 8
+    Height = 376
+    Top = 120
+    Width = 968
+    TabOrder = 0
+  end
+  object GroupBox1: TGroupBox
+    Left = 8
+    Height = 97
+    Top = 8
+    Width = 465
+    Caption = 'LoadTable'
+    ClientHeight = 77
+    ClientWidth = 461
+    TabOrder = 1
+    object Edit1: TEdit
+      Left = 136
+      Height = 23
+      Top = 40
+      Width = 119
+      TabOrder = 0
+      Text = 'Name of Table (10c)'
+    end
+    object Label1: TLabel
+      Left = 8
+      Height = 15
+      Top = 40
+      Width = 119
+      Caption = 'Name of Table to load:'
+      ParentColor = False
+    end
+    object Button1: TButton
+      Left = 272
+      Height = 25
+      Top = 40
+      Width = 119
+      Caption = 'Load Table'
+      OnClick = Button1Click
+      TabOrder = 1
+    end
+    object Label2: TLabel
+      Left = 8
+      Height = 15
+      Top = 8
+      Width = 100
+      Caption = 'Name of Database:'
+      ParentColor = False
+    end
+    object Edit2: TEdit
+      Left = 136
+      Height = 23
+      Top = 8
+      Width = 119
+      TabOrder = 2
+      Text = 'Name of DB (10c)'
+    end
+    object Button2: TButton
+      Left = 272
+      Height = 25
+      Top = 8
+      Width = 119
+      Caption = 'LoadDB'
+      OnClick = Button2Click
+      TabOrder = 3
+    end
+  end
+  object MainMenu1: TMainMenu
+    left = 936
+    top = 8
+    object MenuItem1: TMenuItem
+      Caption = 'Database'
+      OnClick = MenuItem1Click
+      object MenuItem3: TMenuItem
+        Caption = 'Create Database'
+        OnClick = MenuItem3Click
+      end
+      object MenuItem5: TMenuItem
+        Caption = 'Delete Database'
+        OnClick = MenuItem5Click
+      end
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Table'
+      object MenuItem6: TMenuItem
+        Caption = 'Create Table'
+        OnClick = MenuItem6Click
+      end
+      object MenuItem7: TMenuItem
+        Caption = 'Delete Table'
+        OnClick = MenuItem7Click
+      end
+    end
+    object MenuItem4: TMenuItem
+      Caption = 'Column'
+      object MenuItem9: TMenuItem
+        Caption = 'Add Column'
+        OnClick = MenuItem9Click
+      end
+      object MenuItem10: TMenuItem
+        Caption = 'Remove Column'
+        OnClick = MenuItem10Click
+      end
+    end
+    object MenuItem11: TMenuItem
+      Caption = 'Content'
+      object MenuItem12: TMenuItem
+        Caption = 'Add Content'
+        OnClick = MenuItem12Click
+      end
+      object MenuItem13: TMenuItem
+        Caption = 'Remove Content'
+        OnClick = MenuItem13Click
+      end
+    end
+  end
+end

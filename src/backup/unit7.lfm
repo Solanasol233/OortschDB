@@ -1,0 +1,35 @@
+object Form7: TForm7
+  Left = 550
+  Height = 76
+  Top = 115
+  Width = 320
+  Caption = 'Delete Table'
+  ClientHeight = 76
+  ClientWidth = 320
+  LCLVersion = '3.6.0.0'
+  object Edit1: TEdit
+    Left = 4
+    Height = 23
+    Top = 0
+    Width = 308
+    TabOrder = 0
+    Text = 'Name der Db'
+  end
+  object Edit2: TEdit
+    Left = 4
+    Height = 23
+    Top = 24
+    Width = 304
+    TabOrder = 1
+    Text = 'Name des Tables'
+  end
+  object Button1: TButton
+    Left = 0
+    Height = 25
+    Top = 48
+    Width = 311
+    Caption = 'Delete Table'
+    TabOrder = 2
+    OnClick = Button1Click
+  end
+end
