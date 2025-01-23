@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <stdint.h>
 
 
 STATE state = {0};	/*State-Struct in dem alle Pointer zu den Datenbank-Headern gespeichert wird*/
@@ -47,7 +48,7 @@ void deleteDatabase(DB* db) {
 	if (db == 0) {return;}	/*Wenn keine Datenbank existiert, kann auch keine gel�scht werden
 								--> kein Löschen einer Datenbank*/
 
-	for (int i = 0; i<state.num_db; i++) {
+	for (int i = 0; i < db->num_table; i++) {
 		deleteTable(db, (DB_TABLE*)db->database + i);
 	}
 
@@ -56,7 +57,7 @@ void deleteDatabase(DB* db) {
 		free(state.top);
 		state.top=0;
 	} else {
-		memmove(db, db + 1, sizeof(DB) * (state.num_db - ((int)db - (int)state.top) / sizeof(DB) + 1));	/*Wenn mehr als eine Datenbank existiert 
+		memmove(db, db + 1, sizeof(DB) * (state.num_db - (((uint64_t)db - (uint64_t)state.top) / sizeof(DB) + 1)));	/*Wenn mehr als eine Datenbank existiert
 																										werden alle Datenbanken, die 'danach' kommen
 																										im Speicher nach 'vorne' geschoben*/
 		state.top = realloc(state.top, sizeof(DB) * (state.num_db - 1));	/*Datenbank-Header-Speicher wird neu berechnet*/
@@ -107,7 +108,7 @@ void deleteTable(DB* db, DB_TABLE* table) {
 	} else {
 		/*Wenn mehr als ein Table existiert, werden alle Table, die nach dem gel�schten Table kommen im Speicher nach 'vorn'
 		geschoben*/
-		memmove(table, table + 1, sizeof(DB_TABLE) * (db->num_table - ((int)table - (int)db->database) / sizeof(DB_TABLE) + 1));
+		memmove(table, table + 1, sizeof(DB_TABLE) * (db->num_table - (((uint64_t)table - (uint64_t)db->database) / sizeof(DB_TABLE) + 1)));
 		db->database = realloc(db->database, sizeof(DB_TABLE) * (db->num_table - 1));	/*Speicherplatz f�r die Table wird neu berechnet*/
 	}
 
